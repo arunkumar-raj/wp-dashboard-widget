@@ -1,0 +1,19 @@
+{
+  "name": "dashboard-widget",
+  "version": "1.0.0",
+  "description": "Dashboard widget to show the graph in react js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "wp-scripts build",
+    "start": "wp-scripts start"
+  },
+  "author": "Arunkumar",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^26.2.0"
+  },
+  "dependencies": {
+    "recharts": "^2.5.0"
+  }
+}

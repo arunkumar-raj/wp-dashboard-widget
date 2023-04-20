@@ -1,0 +1,1 @@
+{"version":3,"file":"index.css","mappings":";;;AACC;EACC;EACA;EACA;EACA;AAAF,C","sources":["webpack://dashboard-widget/./src/style/main.scss"],"sourcesContent":["#rankmath-widget{\n\t.dashboard_dropdown{\n\t\tposition: relative;\n\t\tdisplay: flex;\n\t\ttop: -3.5em;\n\t\tleft: 50%;\n\t}\n}\n"],"names":[],"sourceRoot":""}

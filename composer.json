@@ -1,0 +1,17 @@
+{
+    "name": "rankmath/widget",
+    "description": "Dashboard widget to show the graph in react js",
+    "license": "GPL-2.0",
+    "autoload": {
+        "psr-4": {
+            "Rankmath\\Widget\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Arun kumar",
+            "email": "arunkumar.ram87@gmail.com"
+        }
+    ],
+    "require": {}
+}
