@@ -9,6 +9,6 @@
  */
 
 ?>
-<div id="rankmath-widget" data-url="<?php echo esc_url( site_url() ); ?>">
-	<h2>Loading ..</h2>
+<div id="rankmath-widget">
+	<h2><?php esc_html_e( 'Loading ..', 'rankmath' ); ?></h2>
 </div>

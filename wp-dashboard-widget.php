@@ -13,6 +13,7 @@
  * License: GPL-2.0
  * License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
  * Text Domain: rankmath
+ * Domain Path: /languages
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

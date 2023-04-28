@@ -35,7 +35,7 @@ if ( ! class_exists( 'Dashboard_Widget' ) ) {
 		 * @since 1.0.0
 		 */
 		public function rankmath_add_dashboard_widget() {
-			wp_add_dashboard_widget( 'rankmath-graph', 'Graph Widget', array( $this, 'rankmath_dashboard_get_graph' ) );
+			wp_add_dashboard_widget( 'rankmath-graph', esc_html__( 'Graph Widget', 'rankmath' ), array( $this, 'rankmath_dashboard_get_graph' ) );
 		}
 
 		/**
@@ -53,8 +53,11 @@ if ( ! class_exists( 'Dashboard_Widget' ) ) {
 		 * @since 1.0.0
 		 */
 		public function rankmath_enque_scripts() {
-			wp_enqueue_style( 'rankmath-style', WP_RM_URL . 'build/index.css', '', '1.0.0' );
-			wp_enqueue_script( 'rankmath-script', WP_RM_URL . 'build/index.js', array( 'wp-element' ), '1.0.0', true );
+			global $pagenow;
+			if ( 'index.php' === $pagenow && is_admin() ) {
+				wp_enqueue_style( 'rankmath-style', WP_RM_URL . 'build/index.css', '', '1.0.0' );
+				wp_enqueue_script( 'rankmath-script', WP_RM_URL . 'build/index.js', array( 'wp-components', 'wp-api-fetch' ), '1.0.0', true );
+			}
 		}
 
 		/**
@@ -67,8 +70,9 @@ if ( ! class_exists( 'Dashboard_Widget' ) ) {
 				'wprm-dashboard/v1',
 				'/getchart/(?P<date>\d+)',
 				array(
-					'methods'  => \WP_REST_Server::READABLE,
-					'callback' => array( $this, 'rankmath_callback_get_chart' ),
+					'methods'             => \WP_REST_Server::READABLE,
+					'callback'            => array( $this, 'rankmath_callback_get_chart' ),
+					'permission_callback' => '__return_true',
 				)
 			);
 		}

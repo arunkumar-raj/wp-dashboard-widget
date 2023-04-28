@@ -1,8 +1,7 @@
-import React from 'react';
 import Dashboard from './components/Dashboard';
-const App = ( props ) =>{
+const App = () =>{
 	return(
-		<Dashboard {...props} />
+		<Dashboard/>
 	);
 }
 export default App;
